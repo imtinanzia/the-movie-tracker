@@ -21,7 +21,7 @@ cd the-movie-tracker
 
 ```bash
 yarn
-or
+# or
 yarn install
 ```
 
