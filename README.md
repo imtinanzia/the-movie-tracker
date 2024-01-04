@@ -1,23 +1,45 @@
-# Getting Started with Create React App
+# Getting Started with The Movie Tracker
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), [Tailwind CSS](https://tailwindcss.com/) and [Redux Toolkit](https://redux-toolkit.js.org/).
 
-## Available Scripts
+## Overview
 
-In the project directory, you can run:
+The Movie Tracker is a React app that allows users to track and manage their movie preferences. The app features user authentication, movie categorization, favorites management, and a dark mode toggle. This README provides instructions on how to set up and run the app locally, highlights key features, and explains the user interface.
 
-### `npm start`
+## Local Setup
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+To run the app locally, follow these steps:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+1. Clone the repository:
 
-### `npm test`
+```bash
+git clone https://github.com/imtinanzia/the-movie-tracker.git
+cd the-movie-tracker
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. Install dependencies using one of the following commands:
+
+```bash
+yarn
+or
+yarn install
+```
+
+3. To run this project, you will need to add the following environment variables to your .env file
+
+`REACT_APP_MOVIE_API_TOKEN`
+
+`REACT_APP_BASE_URL`
+
+`REACT_APP_IMAGE_URL`
+
+3. Start the development server:
+
+### `yarn start`
+
+4. Open your browser and navigate to http://localhost:3000 to view the app.
+   The page will reload if you make edits.\
+   You will also see any lint errors in the console.
 
 ### `npm run build`
 
@@ -29,18 +51,37 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## Features
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### User Authentication
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- The app uses the username stored in cookies for user identification.
+- If a username is present in the cookie, the user will be redirected to the home page; otherwise, they will be directed to the login page.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Movie List
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- The app displays a list of movies categorized as currently watching, suggested to watch, and previously watched.
+- Hovering over a movie reveals detailed information, including a play button and a heart icon.
 
-## Learn More
+### Favourites Management
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- The heart icon indicates whether a movie is in the user's favorites list.
+- Clicking the heart icon will toggle the movie's status as a favorite, with a corresponding toaster message.
+- Favourite movies are stored using cookies.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Search Bar
+
+- A debounced search bar is located in the header, accessible from any page.
+- Results are displayed when the user stops typing.
+
+### Dark Mode
+
+- The app supports a dark mode toggle at the bottom.
+- Dark mode preferences are stored in cookies.
+- Movie Details Page
+- The movie details page includes the movie title, an "Add to Wishlist" button, a poster, genres, description, rating, and views.
+- A play button redirects to the movie details page, and another poster with a play button redirects to the movie URL.
+
+## Authors
+
+- [@imtinanzia](https://github.com/imtinanzia)
