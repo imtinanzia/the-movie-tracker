@@ -44,7 +44,7 @@ yarn start
    You will also see any lint errors in the console.
 
 ```bash
-npm run build`
+yarn build
 ```
 
 Builds the app for production to the `build` folder.\
