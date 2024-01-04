@@ -99,7 +99,7 @@ const Movies = () => {
             {search}
           </p>
 
-          <div className="grid grid-cols-6 gap-4 mb-32">
+          <div className="grid grid-cols-6 gap-4 pb-32 min-h-[100%]">
             {searchedMovie.length > 0 ? (
               searchedMovie.map((item) => <Card {...item} key={item.title} />)
             ) : (

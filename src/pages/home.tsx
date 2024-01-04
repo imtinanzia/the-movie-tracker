@@ -79,7 +79,7 @@ const Home = () => {
   }, [memoizedGetNowPlayingMovies, memoizedGetPopularMovies]);
 
   return (
-    <div className={`${isDarkTheme && "bg-black text-white"}`}>
+    <div className={`${isDarkTheme && "bg-black text-white min-h-screen"}`}>
       <div className="max-w-[1300px] mx-auto">
         {loading ? <Loader /> : <Movies />}
       </div>
