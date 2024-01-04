@@ -86,7 +86,7 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 - The movie details page includes the movie title, an "Add to Wishlist" button, a poster, genres, description, rating, and views.
 - A play button redirects to the movie details page, and another poster with a play button redirects to the movie URL.
 
-## Here is the Vercel Linkmof Project working with my environment variables
+## Here is the Vercel Link of Project working with my environment variables
 
 - [The Movie Tracker App](https://the-movie-tracker.vercel.app)
 
