@@ -1,12 +1,6 @@
 import { debounce } from "lodash";
 import { ChangeEvent, useCallback } from "react";
 import { useAppDispatch, useAppSelector } from "../redux-toolkit/hook";
-
-import {
-  addToCurrentlyWatching,
-  addToSuggestToWatch,
-} from "../redux-toolkit/slices/movies";
-
 import { setSearchString } from "../redux-toolkit/slices/search";
 import { FaPowerOff } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
@@ -14,7 +8,6 @@ import Cookies from "js-cookie";
 import { setUsername } from "../redux-toolkit/slices/user";
 
 const Header = () => {
-  const movies = useAppSelector((state) => state.movies);
   const isDarkTheme = useAppSelector((state) => state.theme.isDarkMode);
   const dispatch = useAppDispatch();
   const username = useAppSelector((state) => state.user.username);
@@ -28,17 +21,6 @@ const Header = () => {
     }
 
     dispatch(setSearchString(e.target.value));
-
-    const searchedItem = movies.suggestToWatch.filter((x) =>
-      x?.title?.toLowerCase().includes(e.target.value.toLowerCase())
-    );
-
-    const searchedCItem = movies.currentlyWatching.filter((x) =>
-      x?.title?.toLowerCase().includes(e.target.value.toLowerCase())
-    );
-
-    dispatch(addToSuggestToWatch(searchedItem));
-    dispatch(addToCurrentlyWatching(searchedCItem));
   };
 
   // eslint-disable-next-line react-hooks/exhaustive-deps

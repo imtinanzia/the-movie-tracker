@@ -15,6 +15,10 @@ const Movies = () => {
   const movies = useAppSelector((state) => state.movies);
   const isDarkTheme = useAppSelector((state) => state.theme.isDarkMode);
 
+  const searchedMovie = movies.suggestToWatch.filter((movie) =>
+    movie.title.toLowerCase().includes(search.toLowerCase())
+  );
+
   return (
     <div className="pt-8">
       <Link
@@ -96,10 +100,8 @@ const Movies = () => {
           </p>
 
           <div className="grid grid-cols-6 gap-4 mb-32">
-            {movies.currentlyWatching?.length > 0 ? (
-              movies.currentlyWatching
-                .slice(0, 6)
-                .map((item) => <Card {...item} key={item.title} />)
+            {searchedMovie.length > 0 ? (
+              searchedMovie.map((item) => <Card {...item} key={item.title} />)
             ) : (
               <p className="p-4 whitespace-nowrap">
                 Nothing found against your query
